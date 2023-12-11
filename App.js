@@ -29,14 +29,20 @@ const App = () => {
     }
 
     const handlerModal = (item) => {
-        setItemSelected(item)
-        setModalVisible(true)
-        
-    }
+       setItemSelected(item)
+       setModalVisible(true)
+             
+     }
     const handlerDeleteItem = () => {
       setItems(current => current.filter(item => item.id !== itemSelected.id))
       setModalVisible(false)
     }
+
+    const handlerClose = () => {
+        setModalVisible(false)
+            
+    }
+
     return  <View  style={styles.container}>
               <Titulo />
 
@@ -55,8 +61,10 @@ const App = () => {
                 item = {itemSelected}
                 visible={modalVisible}
                 onModal = {handlerModal}
+                onClose = {handlerClose}
                 onDelete={handlerDeleteItem}
               />
+             
            </View>
     
   }

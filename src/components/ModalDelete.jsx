@@ -1,6 +1,6 @@
 import {Modal,View,Text,Button , StyleSheet} from "react-native"
 
-const ModalDelete = ({item,visible,onModal,onDelete}) =>{
+const ModalDelete = ({item,visible,onModal,onDelete, onClose}) =>{
 
     return  <Modal
                 visible={visible}
@@ -10,7 +10,8 @@ const ModalDelete = ({item,visible,onModal,onDelete}) =>{
                         <Text style={styles.modalText}>¿esta seguro que quiere borrar?</Text>
                         <Text style={styles.modalText}>{item.desc}</Text>
                         <Button title="Confirmo" onPress={onDelete} />
-                        <Button title="Cerrar" onPress={()=> onModal(false)}/>
+                        {/* <Button title="Cerrar" onPress={()=> onModal(false)}/> */}
+                        <Button title="Cerrar" onPress={onClose} />
                     </View>        
                 </View>
             </Modal>
